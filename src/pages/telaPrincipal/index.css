@@ -1,11 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    max-width: 280px;
+    margin: auto;
+}
+
+.logo img{
+    width: 100%;
+    text-align: center;
+}
+
 .container-main{
     width: 100% !important;
     min-height: 100vh !important;
+    background-color: #C6E1F5;
 }
 
 .container-list{
     display: flex;
     justify-content: center;
+    margin-top: 32px;
 }
 
 .row{
