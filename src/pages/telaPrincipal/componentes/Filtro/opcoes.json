@@ -1,0 +1,66 @@
+[
+    {
+        "label": "All",
+        "value": "all"
+    },
+    {
+        "label":"Grass",
+        "value": "grass"
+    },
+    {
+        "label":"Poison",
+        "value": "poison"
+    },
+    {
+        "label":"Fire",
+        "value": "fire"
+    },
+    {
+        "label":"Flying",
+        "value": "flying"
+    },
+    {
+        "label":"Water",
+        "value": "water"
+    },
+    {
+        "label":"Bug",
+        "value": "bug"
+    },
+    {
+        "label":"Normal",
+        "value": "normal"
+    },
+    {
+        "label":"Electric",
+        "value": "electric"
+    },
+    {
+        "label":"Ground",
+        "value": "ground"
+    },
+    {
+        "label":"Fighting",
+        "value": "fighting"
+    },
+    {
+        "label":"Psychic",
+        "value": "psychic"
+    },
+    {
+        "label":"Rock",
+        "value": "rock"
+    },
+    {
+        "label":"Ice",
+        "value": "ice"
+    },
+    {
+        "label":"Ghost",
+        "value": "ghost"
+    },
+    {
+        "label":"Dragon",
+        "value": "dragon"
+    }
+]
