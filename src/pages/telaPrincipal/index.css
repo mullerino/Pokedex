@@ -28,3 +28,11 @@
 .row{
     width: 70%;
 }
+
+.search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
