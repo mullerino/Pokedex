@@ -8,10 +8,10 @@ interface CampoTextProps{
 }
 
 const CampoText = ({buscarPokemons}: CampoTextProps): JSX.Element =>{
-
+    
     return ( 
         <div className='search_poke'>
-            <Search placeholder="Digite o nome do Pokemon" onChange={e => buscarPokemons(e.target.value)} enterButton style={{ width: 250 }}/>
+            <Search placeholder="Digite o nome do Pokemon" onSearch={(text)=>buscarPokemons(text)} enterButton style={{ width: 250 }}/>
         </div>
     )
 }
