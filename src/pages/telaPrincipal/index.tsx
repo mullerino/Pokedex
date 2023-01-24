@@ -56,7 +56,7 @@ const App = (): JSX.Element => {
     }
 
     useEffect(()=>{
-      const newData = data.filter(pok => pok.name.toLowerCase().includes(textDigitado) && FiltrarAtt(pok.type))
+      const newData = data.filter(pok => pok.name.toLowerCase().includes(textDigitado.toLowerCase()) && FiltrarAtt(pok.type))
       setList(newData)
     }, [textDigitado, att])
 
