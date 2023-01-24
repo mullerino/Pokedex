@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios, { all } from "axios";
 
 import { Row, Col, Result } from "antd";
+import type { PaginationProps } from 'antd';
+import { Pagination } from 'antd';
 
 import CardPokemon from "./componentes/cardPokemon";
 import { Pokemon } from "../../@types/pokemon";
@@ -24,9 +26,22 @@ const App = (): JSX.Element => {
       .then(({data}) => {
         setData(data.pokemon)
         setList(data.pokemon)
+        setTotal(data.pokemon.length)
       })
       .catch((error) => {console.log(error)})
     },[]) 
+
+    const [page, setPage] = useState(1);
+    const [total, setTotal] = useState<number>()
+    const [postPerPage, setPostPerPage] = useState(12)
+
+    const onChange: PaginationProps['onChange'] = (page) => {
+      setPage(page);
+    };
+
+    const indexOfLastPage = page + postPerPage - 1
+    const indexOfFirstPage = indexOfLastPage - postPerPage
+    const currentList = list.slice(indexOfFirstPage,indexOfLastPage)
 
     const FiltrarAtt = (types: string[])=>{
       const [type1= '',type2=''] = types?.slice(0,types.length)
@@ -34,12 +49,10 @@ const App = (): JSX.Element => {
       if(type1.toLowerCase() == att || type2.toLowerCase() == att){
         return true
       }
-      else if(att === "all"){
+      else if(att === "all" || att === undefined){
         return true
       }
-      else{
-        return false
-      }
+      return false
     }
 
     useEffect(()=>{
@@ -50,7 +63,7 @@ const App = (): JSX.Element => {
 
     return (
         <div className="container-main">
-            <section className="logo">
+            <section className="logo_text">
               <img src="/logo_pokemon.png" alt="Logo"/>
             </section>
             <section className = "search">
@@ -59,7 +72,7 @@ const App = (): JSX.Element => {
             </section>
             <div className="container-list">
               <Row gutter={[15,15]} className = "row">
-                {list.map((pokemon) => {
+                {currentList.map((pokemon) => {
                     return (
                       <Col span={6} key={pokemon.id}>
                           <CardPokemon objeto={pokemon}/>
@@ -67,6 +80,13 @@ const App = (): JSX.Element => {
                     )
                 })}
               </Row>
+              <Pagination 
+                size="small"
+                current={page} 
+                onChange={onChange} 
+                total={total} 
+                pageSize = {postPerPage} 
+                className="pagination"/>
             </div>
         </div>
     )
