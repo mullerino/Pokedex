@@ -12,8 +12,8 @@ const Filtro = ({setAtributo}: IFiltros)=>{
             <Select
             showSearch
             placeholder="Selecione um atributo"
-            style={{ width: 170 }}
-            onChange={(value) => setAtributo(value)}
+            style={{ width: 200 }}
+            onChange={(value = '') => setAtributo(value)}
             options={Atributos}
             />
         </div>
