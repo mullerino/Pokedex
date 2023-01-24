@@ -39,9 +39,12 @@ const App = (): JSX.Element => {
       setPage(page);
     };
 
-    const indexOfLastPage = page + postPerPage - 1
+    const indexOfLastPage = postPerPage * page
     const indexOfFirstPage = indexOfLastPage - postPerPage
     const currentList = list.slice(indexOfFirstPage,indexOfLastPage)
+
+    
+    console.log(indexOfFirstPage,indexOfLastPage)
 
     const FiltrarAtt = (types: string[])=>{
       const [type1= '',type2=''] = types?.slice(0,types.length)
