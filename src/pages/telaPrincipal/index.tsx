@@ -11,9 +11,10 @@ import { Pokemon } from "../../@types/pokemon";
 import "./index.css"
 import CampoText from "./componentes/campoText";
 import Filtro from "./componentes/Filtro";
+import { Link } from "react-router-dom";
 
 
-const App = (): JSX.Element => {
+const TelaPrincipal = (): JSX.Element => {
 
     const [textDigitado, setTextDigitado] = useState<string>('')
     const [data,setData] = useState<Pokemon[]>([])
@@ -24,6 +25,7 @@ const App = (): JSX.Element => {
       axios.get
       ('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
       .then(({data}) => {
+        console.log(data)
         setData(data.pokemon)
         setList(data.pokemon)
         setTotal(data.pokemon.length)
@@ -43,8 +45,6 @@ const App = (): JSX.Element => {
     const indexOfFirstPage = indexOfLastPage - postPerPage
     const currentList = list.slice(indexOfFirstPage,indexOfLastPage)
 
-    
-    console.log(indexOfFirstPage,indexOfLastPage)
 
     const FiltrarAtt = (types: string[])=>{
       const [type1= '',type2=''] = types?.slice(0,types.length)
@@ -61,6 +61,7 @@ const App = (): JSX.Element => {
     useEffect(()=>{
       const newData = data.filter(pok => pok.name.toLowerCase().includes(textDigitado.toLowerCase()) && FiltrarAtt(pok.type))
       setList(newData)
+      setTotal(newData.length)
     }, [textDigitado, att])
 
 
@@ -78,7 +79,7 @@ const App = (): JSX.Element => {
                 {currentList.map((pokemon) => {
                     return (
                       <Col span={6} key={pokemon.id}>
-                          <CardPokemon objeto={pokemon}/>
+                          <Link to= {`/${pokemon.name.toLowerCase()}`}><CardPokemon objeto={pokemon}/></Link>
                       </Col>
                     )
                 })}
@@ -95,4 +96,4 @@ const App = (): JSX.Element => {
     )
 }
 
-export default App
+export default TelaPrincipal
