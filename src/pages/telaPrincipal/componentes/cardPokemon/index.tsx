@@ -13,15 +13,15 @@ const cardPokemon = ({objeto}: cardPokemonPros): JSX.Element => {
                 <Col span={24} className="container-img">
                     <img src={objeto.img} />
                 </Col>
-                <Col span={24}>
+                <Col span={24} className="card_number">
                     <Typography.Text>N {objeto.num}</Typography.Text>
                 </Col>
-                <Col span={24}>
+                <Col span={24} className="card_name">
                     <Typography.Title level={4}>{objeto.name}</Typography.Title>
                 </Col>
-                <Col span={24}>
+                <Col span={24} className="card_tags">
                     {objeto.type.map((nomeCaracteristica) => (
-                        <Tag color="magenta" key={nomeCaracteristica}>{nomeCaracteristica}</Tag>
+                        <Tag className="card_tags_tag" color="magenta" key={nomeCaracteristica}>{nomeCaracteristica}</Tag>
                     ))}
                 </Col>
             </Row>
