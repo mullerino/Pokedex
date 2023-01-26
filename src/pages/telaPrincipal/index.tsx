@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios, { all } from "axios";
 
-import { Row, Col, Result } from "antd";
+import { Row, Col } from "antd";
 import type { PaginationProps } from 'antd';
 import { Pagination } from 'antd';
 
@@ -14,24 +14,20 @@ import Filtro from "./componentes/Filtro";
 import { Link } from "react-router-dom";
 
 
-const TelaPrincipal = (): JSX.Element => {
+interface ITelaPrincipal {
+  data: Pokemon[]
+}
+
+const TelaPrincipal = ({data} : ITelaPrincipal): JSX.Element => {
 
     const [textDigitado, setTextDigitado] = useState<string>('')
-    const [data,setData] = useState<Pokemon[]>([])
     const [list,setList] = useState(data)
     const [att, setAtt] = useState<string>()
 
     useEffect(() => {
-      axios.get
-      ('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
-      .then(({data}) => {
-        console.log(data)
-        setData(data.pokemon)
-        setList(data.pokemon)
-        setTotal(data.pokemon.length)
-      })
-      .catch((error) => {console.log(error)})
-    },[]) 
+        setList(data)
+        setTotal(data.length)
+    },[data]) 
 
     const [page, setPage] = useState(1);
     const [total, setTotal] = useState<number>()
