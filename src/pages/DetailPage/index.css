@@ -1,0 +1,15 @@
+.site-layout{
+    background-color: #C6E1F5;
+    padding: 0;
+    margin: 0;
+}
+
+.content_container{
+    margin: 0 24px;
+    background-color: #98ccf4;
+}
+
+.content{
+    padding: 12px;
+    min-height: 500px; 
+}
