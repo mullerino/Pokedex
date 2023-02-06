@@ -33,7 +33,16 @@ const App = ()=>{
                         element = {
                             <Detailpage 
                             name = {pok.name}
+                            id={pok.id}
                             num = {pok.num}
+                            img = {pok.img}
+                            egg = {pok.egg}
+                            type = {pok.type}
+                            height = {pok.height}
+                            weight= {pok.weight}
+                            weaknesses={pok.weaknesses}
+                            spawn_chance = {pok.spawn_chance}
+                            next_evolution={pok.next_evolution}
                             ></Detailpage>}>
                         </Route>
                     )
