@@ -21,9 +21,9 @@
 
 .content-title h2{
     font-weight: 500;
-    font-size: 32px;
+    font-size: 36px;
     margin-bottom: 4px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 .content-title span{
@@ -34,37 +34,63 @@
 .content-details{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-evenly;
     align-items: center;
-    margin: 16px 0;
+    margin: 48px 0;
 }
 
 .details-img{
     width: 220px;
-    height: 280px;
+    height: 380px;
 }
 
 .details-img img{
     width: 100%;
 }
 
+.details-evolution{
+    margin: 16px 0;
+}
+
+.details-evolution h3{
+    font-size: 24px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin: 16px 0;
+}
+
+.details-evolution span{
+    letter-spacing: 2px;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+}
+
 .info-card{
     display: grid;
     width: 500px;
     height: 100%;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 0.7fr 0.7fr;
     text-align: center;
-    background-color: rgb(148, 71, 226);
+    background-color: #212D36;
     border-radius: 20px;
-    color: rgb(226, 239, 249);
-    padding: 8px 0;
+    color: rgb(220, 221, 222);
+    padding: 8px 12px;
 }
 
-.content-details span{
+.details-info h3{
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 8px 0;
+}
+
+.details-info span{
     display: block;
-    font-size: 20px;
-    margin: 6px 0;
+    font-size: 18px;
+    margin: 8px 0;
+    padding: 1px;
 }
 
 .footer-button{
@@ -79,8 +105,7 @@
 }
 
 .footer-button:hover{
-    transform: scale(1.02);
+    transform: scale(1.01);
     transition: all 0.3s ease-in;
-    color: aliceblue;
-    background-color: rgb(248, 116, 133);
+    background-color: rgb(220, 93, 110);
 }
