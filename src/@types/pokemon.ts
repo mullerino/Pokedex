@@ -10,6 +10,7 @@ export interface Pokemon {
     weaknesses: string[];
     spawn_chance: number;
     next_evolution: evolutionPok[];
+    prev_evolution: evolutionPok[];
   }
 
   interface evolutionPok{
