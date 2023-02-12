@@ -17,6 +17,7 @@ const App = ()=>{
         ('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
         .then(({data}) => {
           setData(data.pokemon)
+          console.log(data.pokemon)
         })
         .catch((error) => {console.log(error)})
       },[]) 
@@ -43,6 +44,7 @@ const App = ()=>{
                             weaknesses={pok.weaknesses}
                             spawn_chance = {pok.spawn_chance}
                             next_evolution={pok.next_evolution}
+                            prev_evolution={pok.prev_evolution}
                             ></Detailpage>}>
                         </Route>
                     )
