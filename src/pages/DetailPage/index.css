@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 .site-layout{
     background-color: #C6E1F5;
     padding: 0;
@@ -20,21 +23,22 @@
 }
 
 .content-title h2{
-    font-weight: 500;
-    font-size: 36px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
     margin-bottom: 4px;
     letter-spacing: 4px;
 }
 
 .content-title span{
     font-size: 16px;
+    font-family: 'Barlow Condensed', sans-serif;
     letter-spacing: 2px;
 }
 
 .content-details{
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
     margin: 48px 0;
 }
@@ -53,10 +57,11 @@
 }
 
 .details-evolution h3{
-    font-size: 24px;
-    letter-spacing: 4px;
+    font-size: 16px;
+    letter-spacing: 2px;
     text-align: center;
     margin: 16px 0;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .details-evolution span{
@@ -65,13 +70,14 @@
     display: block;
     text-align: center;
     padding: 8px 0;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .info-card{
     display: grid;
-    width: 500px;
+    width: 400px;
     height: 100%;
-    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-columns: 0 1 100%;
     grid-template-rows: 0.7fr 0.7fr;
     text-align: center;
     background-color: #212D36;
@@ -81,9 +87,9 @@
 }
 
 .details-info h3{
-    font-size: 18px;
-    letter-spacing: 2px;
+    font-size: 14px;
     margin: 8px 0;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .details-info span{
@@ -91,6 +97,7 @@
     font-size: 18px;
     margin: 8px 0;
     padding: 1px;
+    font-family: 'Barlow Condensed', sans-serif;
 }
 
 .footer-button{
