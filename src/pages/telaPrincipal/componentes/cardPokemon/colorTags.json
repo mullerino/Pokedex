@@ -1,0 +1,58 @@
+[
+    {
+        "tag" : "Water",
+        "color" : "blue"
+    },
+    {
+        "tag" : "Grass",
+        "color" : "green"
+    },
+    {
+        "tag" : "Ground",
+        "color" : "#a37063"
+    },
+    {
+        "tag" : "Fire",
+        "color" : "red"
+    },
+    {
+        "tag" : "Poison",
+        "color" : "#800080"
+    },
+    {
+        "tag" : "Flying",
+        "color" : "grey"
+    },
+    {
+        "tag" : "Bug",
+        "color" : "purple"
+    },
+    {
+        "tag" : "Normal",
+        "color" : "#FF0066"
+    },
+    {
+        "tag" : "Electric",
+        "color" : "#d7d350"
+    },
+    {
+        "tag" : "Fighting",
+        "color" : "#4B0082"
+    },
+    {
+        "tag" : "Psychic",
+        "color" : "#EE82EE"
+    },
+    {
+        "tag" : "Rock",
+        "color" : "#F7E7CE"
+    },
+    {
+        "tag" : "Ice",
+        "color" : "#1C39BB"
+    },
+    {
+        "tag" : "Ghost",
+        "color" : "#F5F5DC"
+    }
+]
