@@ -9,7 +9,8 @@ const { Header, Content, Footer } = Layout;
 
 const DetailsPage = ({ name,num, img, egg, type, height, weight, weaknesses, spawn_chance, next_evolution, prev_evolution } : IDetailsPage)=> {
 
-    const typeEvolution = next_evolution == null ? 'Prev evolution' : 'Next evolution'
+    const nullEvolution = next_evolution == null && prev_evolution == null ? true:false
+    const typeEvolution = nullEvolution !==true ? next_evolution == null ? 'Prev evolution' : 'Next evolution' : 'No evolutions'
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -26,7 +27,7 @@ const DetailsPage = ({ name,num, img, egg, type, height, weight, weaknesses, spa
                                 <img src={img}></img>
                                 <div className='details-evolution'>
                                     <h3>{typeEvolution}</h3> 
-                                    {next_evolution != null ? next_evolution.map(item =>{
+                                    {nullEvolution !== true ? next_evolution != null ? next_evolution.map(item =>{
                                         return(
                                             <Link key={item.num} to={`/${item.name}`}><span>{item.name}</span></Link>
                                         )
@@ -35,7 +36,8 @@ const DetailsPage = ({ name,num, img, egg, type, height, weight, weaknesses, spa
                                         return (
                                             <Link  key={item.num} to={`/${item.name}`}><span>{item.name}</span></Link>
                                         )
-                                    }) 
+                                    })
+                                    : ''
                                     }
                                 </div>
                             </div>
@@ -53,7 +55,7 @@ const DetailsPage = ({ name,num, img, egg, type, height, weight, weaknesses, spa
                                         <h3>Egg</h3> 
                                         <span>{egg}</span>
                                     </div>
-                                    <div className='details-weakness'>
+                                    <div>
                                         <h3>Weakness</h3>
                                         {weaknesses.map(item =>{
                                             return (
