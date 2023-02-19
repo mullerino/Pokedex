@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios, { all } from "axios";
 
 import { Row, Col } from "antd";
 import type { PaginationProps } from 'antd';
@@ -13,7 +12,6 @@ import CampoText from "./componentes/campoText";
 import Filtro from "./componentes/Filtro";
 import { Link } from "react-router-dom";
 
-
 interface ITelaPrincipal {
   data: Pokemon[]
 }
@@ -23,7 +21,7 @@ const TelaPrincipal = ({data} : ITelaPrincipal): JSX.Element => {
     const [textDigitado, setTextDigitado] = useState<string>('')
     const [list,setList] = useState(data)
     const [att, setAtt] = useState<string>()
-
+  
     useEffect(() => {
         setList(data)
         setTotal(data.length)
@@ -33,14 +31,14 @@ const TelaPrincipal = ({data} : ITelaPrincipal): JSX.Element => {
     const [total, setTotal] = useState<number>()
     const [postPerPage, setPostPerPage] = useState(12)
 
-    const onChange: PaginationProps['onChange'] = (page) => {
+    const onChange: PaginationProps['onChange'] = (page, pageSize) => {
       setPage(page);
+      setPostPerPage(pageSize)
     };
 
     const indexOfLastPage = postPerPage * page
     const indexOfFirstPage = indexOfLastPage - postPerPage
     const currentList = list.slice(indexOfFirstPage,indexOfLastPage)
-
 
     const FiltrarAtt = (types: string[])=>{
       const [type1= '',type2=''] = types?.slice(0,types.length)
@@ -85,7 +83,8 @@ const TelaPrincipal = ({data} : ITelaPrincipal): JSX.Element => {
                 current={page} 
                 onChange={onChange} 
                 total={total} 
-                pageSize = {postPerPage} 
+                pageSize={postPerPage}
+                showTotal={(total, range) => `${range[0]}-${range[1]} de ${total} itens`}
                 className="pagination"/>
             </div>
         </div>
